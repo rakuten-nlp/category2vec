@@ -1,0 +1,10 @@
+*~
+*.pyc
+*.so
+*_inner.c
+*_bind.cpp
+*.o
+build/*
+\#*\#
+*.DS_Store
+*.cmat
