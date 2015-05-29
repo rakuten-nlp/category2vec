@@ -94,13 +94,24 @@ And under the following CPUs:
     * Opteron 4100 series (use_avx=False)
 
 #### Mac OS X
+In some environment, you'll get NaNs with `use_blas = False`. 
+You should use BLAS library in this case.
+You can install OpenBLAS using the instruction above,
+or you can install it from Homebrew as follows:
+```
+    brew install homebrew/science/openblas
+    # if you use brewed openblas, you should add the following in the ~/.bash_profile
+    # export LDFLAGS="-L/usr/local/opt/openblas/lib"
+    # export CPPFLAGS="-I/usr/local/opt/openblas/include"
+    # edit settings.py and specify the followings
+    # use_blas = True
+    # blas_libs = ["openblas"]
+```
+
 If you use `clang`, edit `settings.py` and specify `use_clang = True`.
 ```
     easy_install pip
     pip install numpy scipy six cython # it's important to build cython using gcc
-    # you can install OpenBLAS using the instruction above 
-    # or you can install it from Homebrew as follows:
-    # brew install homebrew/science/openblas
     make
 ```
 
