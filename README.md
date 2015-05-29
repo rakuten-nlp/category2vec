@@ -123,9 +123,6 @@ For Homebrew,
     source ~/.bash_profile # to use brewed python
     easy_install pip
     pip install numpy scipy six cython # it's important to build cython using gcc
-    # you can install OpenBLAS using the instruction above 
-    # or you can install it from Homebrew as follows:
-    # brew install homebrew/science/openblas
     make
 ```
 If you get errors around AVX (e.g. no such instruction error), replace the native OS X assembler (usr/bin/as) by a script below.
@@ -134,7 +131,7 @@ https://gist.github.com/xianyi/2957847
 
 Or you can specify `use_avx = False` to avoid this error.
 
-This version has been tested under Mac OS X 10.9.5, Python 2.7.9 (Numpy 1.9.2, Scipy 0.15.1) and apple llvm 6.0 / gcc 4.8.4 (brew gcc48) / gcc 4.9.2 (brew gcc49) with the above modification on the assembler.
+This version has been tested under Mac OS X 10.9.5, Python 2.7.9 (Numpy 1.9.2, Scipy 0.15.1) and Apple LLVM 6.0 / gcc 4.8.4 (brew gcc48) / gcc 4.9.2 (brew gcc49) with the above modification on the assembler.
 
 ### Example
 ```
