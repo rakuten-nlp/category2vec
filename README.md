@@ -126,7 +126,17 @@ Or you can specify `use_avx = False` to avoid this error.
 This version has been tested under Mac OS X 10.9.5, Python 2.7.9 (Numpy 1.9.2, Scipy 0.15.1) and apple llvm 6.0 / gcc 4.8.4 (brew gcc48) / gcc 4.9.2 (brew gcc49) with the above modification on the assembler.
 
 ### Example
-
+```
+    from cat2vec import Category2Vec
+    from sentences import CatSentence
+    sentences = CatSentence("myfile.txt")
+    # CV-DBoW model with hierarchical softmax, 10 iterations, dimension 300
+    model = Category2Vec(sentences, model = "dbow", hs = 1, size = 300, iteration = 10)
+    # Save a model
+    model.save("myfile.model")
+    # Load the model
+    model = Category2Vec.load("myfile.model")
+```
 
 ## Terms and Conditions
 Distribution, modification, and academic/commercial use of Category2Vec is permitted, provided that
