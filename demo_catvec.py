@@ -9,22 +9,24 @@ import utils
 import logging
 
 jawiki_name = "jawiki.tsv.gz"
-jawiki_url = "http://junki.me/misc/jawiki-20141122-pages_plaintext.tsv.gz"
+jawiki_url = "https://s3-ap-northeast-1.amazonaws.com/category2vec/jawiki-20141122-pages_plaintext.tsv.gz"
 enwiki_name = "enwiki.tsv.gz"
-enwiki_url = "http://junki.me/misc/enwiki-20141106-pages_plaintext.tsv.gz"
+enwiki_url = "https://s3-ap-northeast-1.amazonaws.com/category2vec/enwiki-20141106-pages_plaintext.tsv.gz"
+wiki_name = enwiki_name
+wiki_url = enwiki_url
 model_dir = "models"
 logger = logging.getLogger("demo")
 
 if __name__ == "__main__":
     logging.basicConfig(format='%(asctime)s : %(threadName)s : %(levelname)s : %(message)s', level=logging.INFO)
     current_dir = os.path.dirname(os.path.realpath(__file__))
-    wikip_data = current_dir+"/"+enwiki_name
-    c2v_model_name = current_dir+"/"+model_dir+"/"+ enwiki_name + "_cat.model"
+    wikip_data = current_dir+"/"+wiki_name
+    c2v_model_name = current_dir+"/"+model_dir+"/"+ wiki_name + "_cat.model"
     if not os.path.exists(current_dir+"/"+model_dir):
         os.mkdir(current_dir+"/"+model_dir)
     if not os.path.isfile(wikip_data):
         logger.info("downloading Wikipedia data")
-        urllib.urlretrieve(enwiki_url, wikip_data)
+        urllib.urlretrieve(wiki_url, wikip_data)
         logger.info("downloaded in %s" % wikip_data)
     
     sentences = WikiSentence(wikip_data)

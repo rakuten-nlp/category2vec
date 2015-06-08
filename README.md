@@ -1,5 +1,5 @@
 # Category2Vec
-
+[Japanese README (日本語ドキュメント)] (https://github.com/rakuten-nlp/category2vec/blob/master/README-ja.md)
 ## Introduction
 Category2Vec is an implementation of the category vector models [Marui and Hagiwara 2015], and the paragraph vector models [Le and Mikolov 2014].
 These programs are based on word2vec [Mikolov et al. 2013a,b] in gensim project (https://radimrehurek.com/gensim/)[Rahurek 2013].
